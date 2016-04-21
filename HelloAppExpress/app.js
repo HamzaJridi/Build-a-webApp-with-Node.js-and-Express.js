@@ -5,8 +5,11 @@ var express = require('express');
 var app = express();
 
 app.set('view engine', 'ejs');
+//add a local variable that'll be added in all views
+app.locals.pagetitle = "Awesome Website"
+
 /** if the views pages are not in a dir called "views"
- * you have to ste the path like this :
+ * you have to set the path like this :
  * "app.set('views', __dirname + '/DirName')" */
 
 /** when the app gets a request that points to
@@ -24,7 +27,7 @@ app.get('/', function(req, res){
 app.get('/about', function(req, res){
     res.render('default', {
         title : 'About Us',
-        classname : 'about'
+        classname : 'about',
     });
 });
 
