@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HamzaJridi/Build-a-webApp-with-Node.js-and-Express.js#readme",
   "dependencies": {
+    "express": "^4.13.4",
     "gulp": "^3.9.1"
   }
 }
