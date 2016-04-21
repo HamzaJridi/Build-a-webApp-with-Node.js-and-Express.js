@@ -16,26 +16,19 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res){
     res.render('default', {
         title : 'Home',
+        classname : 'home',
         users : ["hamza", "bilel", "yassin", "nihel"]
     });
 });
 
-app.get('/me', function(req, res){
-    res.send('@Hamza_1408');
+app.get('/about', function(req, res){
+    res.render('default', {
+        title : 'About Us',
+        classname : 'about'
+    });
 });
 
-app.get('/:name?', function(req, res){
-    /** get  the passed name in the url, put it in the
-     * req.params array then get it by req.params.name*/
-    var name = req.params.name;
-    res.send('@'+name);
-});
 
-app.get('/:name?/:title?', function(req, res){
-    var name = req.params.name;
-    var title = req.params.title;
-    res.send('<p>name: '+name +'<br>title : '+title +'</p>');
-});
 
 app.get('*', function(req, res){
     res.send('<h1>Bad Route!!!</h1> <h3>This page don\'t exist</h3>');
