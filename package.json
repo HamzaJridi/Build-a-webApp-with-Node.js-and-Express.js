@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/HamzaJridi/Build-a-webApp-with-Node.js-and-Express.js/issues"
   },
-  "homepage": "https://github.com/HamzaJridi/Build-a-webApp-with-Node.js-and-Express.js#readme"
+  "homepage": "https://github.com/HamzaJridi/Build-a-webApp-with-Node.js-and-Express.js#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
