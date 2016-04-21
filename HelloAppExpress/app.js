@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var app = express();
+var routes = require('./routes')
 
 app.set('view engine', 'ejs');
 //add a local variable that'll be added in all views
@@ -12,26 +13,9 @@ app.locals.pagetitle = "Awesome Website"
  * you have to set the path like this :
  * "app.set('views', __dirname + '/DirName')" */
 
-/** when the app gets a request that points to
-* the home page, the we'll execute a function that
-* send as a response 'Hello Express'*/
-//Adding routes
-app.get('/', function(req, res){
-    res.render('default', {
-        title : 'Home',
-        classname : 'home',
-        users : ["hamza", "bilel", "yassin", "nihel"]
-    });
-});
-
-app.get('/about', function(req, res){
-    res.render('default', {
-        title : 'About Us',
-        classname : 'about',
-    });
-});
-
-
+//get the route variables from the index.js file
+app.get('/', routes.index);
+app.get('/about', routes.about);
 
 app.get('*', function(req, res){
     res.send('<h1>Bad Route!!!</h1> <h3>This page don\'t exist</h3>');
