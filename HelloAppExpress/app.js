@@ -3,12 +3,21 @@
  */
 var express = require('express');
 var app = express();
+
+app.set('view engine', 'ejs');
+/** if the views pages are not in a dir called "views"
+ * you have to ste the path like this :
+ * "app.set('views', __dirname + '/DirName')" */
+
 /** when the app gets a request that points to
 * the home page, the we'll execute a function that
 * send as a response 'Hello Express'*/
 //Adding routes
 app.get('/', function(req, res){
-    res.send('<h1>Hello</h1> Express');
+    res.render('default', {
+        title : 'Home',
+        users : ["hamza", "bilel", "yassin", "nihel"]
+    });
 });
 
 app.get('/me', function(req, res){
